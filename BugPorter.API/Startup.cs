@@ -13,21 +13,8 @@ namespace BugPorter.API
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.Services.AddSingleton<HelloWorld>();
+           // builder.Services.AddSingleton<HelloWorld>();
         }
     }
 
-    public class HelloWorld
-    {
-        readonly ILogger<HelloWorld> _logger;
-
-        public HelloWorld(ILogger<HelloWorld> logger)
-        {
-            _logger = logger;
-        }
-        public void Run()
-        {
-            _logger.LogInformation($"HelloWorld");
-        }
-    }
 }
