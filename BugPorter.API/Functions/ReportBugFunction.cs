@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using BugPorter.API.Features.ReportBug.GitHub;
+using BugPorter.API.Features.ReportBug;
 
 namespace BugPorter.API
 {
@@ -24,13 +25,18 @@ namespace BugPorter.API
 
         [FunctionName("ReportBugFunction")]
         public  async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "bugs")] HttpRequest req)
+            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "bugs")] ReportedBugRequest request)
         {
-            NewBug newBug = new NewBug("Very Bad Bug", "The div on the home page is not centered");
+            NewBug newBug = new NewBug(request.Summary, request.Description);
 
             ReportedBug reportedBug = await _createGitHubIssueCommand.Execute(newBug);
 
-            return new OkObjectResult(reportedBug);
+            return new OkObjectResult(new ReportedBugResponse()
+            {
+                Id = reportedBug.Id,
+                Summary = reportedBug.Summary,
+                Description = reportedBug.Description,
+            });
         }
     }
 }

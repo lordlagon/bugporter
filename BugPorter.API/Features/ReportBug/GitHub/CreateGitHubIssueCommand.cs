@@ -16,12 +16,12 @@ namespace BugPorter.API.Features.ReportBug.GitHub
             _logger = logger;
         }
 
-        public async Task<ReportedBug> Execute(NewBug bug)
+        public async Task<ReportedBug> Execute(NewBug newBug)
         {
             _logger.LogInformation("Creating GitHub issue");
 
             //Create GitHub issue
-            ReportedBug reportedBug = new ReportedBug("1", "Very Bad Bug", "The div on the home page is not centered");
+            ReportedBug reportedBug = new ReportedBug("1", newBug.Summary, newBug.Description);
             
             _logger.LogInformation("Successfully created GitHub issue {Id}", reportedBug.Id);
             return reportedBug;
