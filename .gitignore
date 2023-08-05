@@ -2,3 +2,4 @@
 bin
 obj
 /BugPorter.API/firebase-config.json
+*.user

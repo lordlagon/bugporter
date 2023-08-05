@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugPorter.API", "BugPorter.API\BugPorter.API.csproj", "{F4E9A898-3B10-4CA8-AC16-DCD15D4A32EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugPorter.API", "BugPorter.API\BugPorter.API.csproj", "{F4E9A898-3B10-4CA8-AC16-DCD15D4A32EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugPorter.Client", "BugPorter.Client\BugPorter.Client.csproj", "{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{F4E9A898-3B10-4CA8-AC16-DCD15D4A32EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E9A898-3B10-4CA8-AC16-DCD15D4A32EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E9A898-3B10-4CA8-AC16-DCD15D4A32EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5417ED8-4051-4A9C-8BD6-E3401DED04DC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
