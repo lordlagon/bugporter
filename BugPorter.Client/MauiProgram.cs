@@ -1,19 +1,22 @@
-﻿namespace BugPorter.Client
-{
-    public static class MauiProgram
-    {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+﻿namespace BugPorter.Client;
 
-            return builder.Build();
-        }
-    }
+public static class MauiProgram
+{
+	public static MauiApp CreateMauiApp()
+	{
+		var builder = MauiApp.CreateBuilder();
+		builder
+			.UseMauiApp<App>()
+			.UseMauiCommunityToolkit()
+			.ConfigureFonts(fonts =>
+			{
+				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+			});
+
+		builder.Services.AddSingleton<ReportBugViewModel>();
+		builder.Services.AddSingleton<ReportBugView>();
+
+		return builder.Build();
+	}
 }

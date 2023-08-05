@@ -1,10 +1,9 @@
-﻿namespace BugPorter.Client
+﻿namespace BugPorter.Client;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
-    {
-        public AppShell()
-        {
-            InitializeComponent();
-        }
-    }
+	public AppShell()
+	{
+		InitializeComponent();
+	}
 }
