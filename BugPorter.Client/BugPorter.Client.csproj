@@ -51,15 +51,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\ReportBugView.xaml.cs">
+	  <Compile Update="Pages\ReportBug\ReportBugView.xaml.cs">
 	    <DependentUpon>ReportBugView.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.3.1</wizardVersion>
-		<projectType>MVVMToolkit</projectType>
-		<framework>Flyout</framework>
+		<projectType>MVVMToolkit</projectType>		
 	</PropertyGroup>
 
 </Project>
