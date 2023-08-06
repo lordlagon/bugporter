@@ -8,7 +8,7 @@
     <ScrollView>
         <VerticalStackLayout Padding="25" MaximumWidthRequest="1000">
             <Label FontSize="Large" Text="Report a Bug" />
-            <local:ReportBugFormView />
+            <local:ReportBugFormView Margin="0,25,0,0" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
