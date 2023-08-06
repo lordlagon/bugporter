@@ -48,6 +48,7 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
+	  <PackageReference Include="FirebaseAuthentication.net" Version="4.0.2" />
 	  <PackageReference Include="Refit" Version="7.0.0" />
 	  <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
 	</ItemGroup>
@@ -87,6 +88,10 @@
 	  <MauiXaml Update="Pages\SignUp\SignUpView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Shared\Enum\" />
 	</ItemGroup>
 
 	<PropertyGroup Label="MauiAppAccelerator">

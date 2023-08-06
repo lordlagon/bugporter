@@ -8,16 +8,18 @@
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
-    <ShellContent
-        Title="Report Bug"
-        ContentTemplate="{DataTemplate pages:ReportBugView}"
-        Route="ReportBug" />
+
 
     <ShellContent
         Title="Sign Up"
         ContentTemplate="{DataTemplate pages:SignUpView}"
         Route="SignUp" />
-
+    
+    <ShellContent
+        Title="Report Bug"
+        ContentTemplate="{DataTemplate pages:ReportBugView}"
+        Route="ReportBug" />
+    
     <ShellContent
         Title="Sign In"
         ContentTemplate="{DataTemplate pages:SignInView}"

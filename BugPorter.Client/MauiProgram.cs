@@ -1,4 +1,7 @@
-﻿namespace BugPorter.Client;
+﻿using Firebase.Auth;
+using Firebase.Auth.Providers;
+
+namespace BugPorter.Client;
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -20,7 +23,17 @@ public static class MauiProgram
     {
         builder.Services
             .AddRefitClient<IReportBugApiCommand>()
-            .ConfigureHttpClient(c=> c.BaseAddress = new Uri("http://localhost:7210/api"));
+            .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://localhost:7210/api"));
+        builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
+        {
+            ApiKey = "AIzaSyDG7Hd9QLi89HlhISWjTRxq7Cw1CZJNogo",
+            AuthDomain = "bugporter-1f17e.firebaseapp.com",
+            Providers = new FirebaseAuthProvider[]
+            {
+                new EmailProvider()
+            }
+        }));
+
         return builder;
     }
     public static MauiAppBuilder RegisterViewModelsViews(this MauiAppBuilder builder)
@@ -28,7 +41,7 @@ public static class MauiProgram
         builder.Services.AddTransient<ReportBugViewModel>();
         builder.Services.AddTransient<ReportBugFormViewModel>();
         builder.Services.AddTransient(s => new ReportBugView(s.GetRequiredService<ReportBugViewModel>()));
-        
+
         builder.Services.AddTransient<SignInViewModel>();
         builder.Services.AddTransient<SignInFormViewModel>();
         builder.Services.AddTransient(s => new SignInView(s.GetRequiredService<SignInViewModel>()));

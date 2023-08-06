@@ -1,3 +1,24 @@
-﻿namespace BugPorter.Client.Features;
+﻿using Firebase.Auth;
 
-public partial class SignUpFormViewModel : ViewModelBase { }
+namespace BugPorter.Client.Features;
+
+public partial class SignUpFormViewModel : ViewModelBase
+{
+    readonly FirebaseAuthClient _authClient;
+    [ObservableProperty]
+    string name; 
+    [ObservableProperty]
+    string email;
+    [ObservableProperty]
+    string password;
+    [ObservableProperty]
+    string confirmPassword;
+    public SignUpFormViewModel(FirebaseAuthClient authClient)
+    {
+        _authClient = authClient;
+    }
+
+    [RelayCommand]
+    void SignUpForm() => new SignUpCommand(this, _authClient).Execute(null);
+    
+}

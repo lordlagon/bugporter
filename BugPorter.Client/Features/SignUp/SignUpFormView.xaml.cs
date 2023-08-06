@@ -1,10 +1,9 @@
 namespace BugPorter.Client.Features;
 
-public partial class SignUpFormView : ContentPage
+public partial class SignUpFormView : ContentView
 {
-    public SignUpFormView(object bindingContext)
+    public SignUpFormView()
     {
-        InitializeComponent();
-        BindingContext = bindingContext;
+        InitializeComponent();        
     }
 }

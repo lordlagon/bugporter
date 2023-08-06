@@ -1,10 +1,9 @@
 namespace BugPorter.Client.Features;
 
-public partial class SignInFormView : ContentPage
+public partial class SignInFormView : ContentView
 {
-	public SignInFormView(object bindingContext)
+	public SignInFormView()
 	{
-		InitializeComponent();
-		BindingContext = bindingContext;
+		InitializeComponent();		
 	}
 }
