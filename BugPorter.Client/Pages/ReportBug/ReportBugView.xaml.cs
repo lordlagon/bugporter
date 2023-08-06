@@ -1,4 +1,4 @@
-﻿namespace BugPorter.Client.Pages.ReportBug;
+﻿namespace BugPorter.Client.Pages;
 
 public partial class ReportBugView : ContentPage
 {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="BugPorter.Client.Features.SignIn.SignInFormView"
+    x:Class="BugPorter.Client.Features.SignInFormView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BugPorter.Client.Features.SignIn"
+    xmlns:local="clr-namespace:BugPorter.Client.Features"
     Title="SignIn View"
     x:DataType="local:SignInFormViewModel">
     <VerticalStackLayout>

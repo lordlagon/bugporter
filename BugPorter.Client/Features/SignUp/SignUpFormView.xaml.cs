@@ -1,4 +1,4 @@
-namespace BugPorter.Client.Features.SignUp;
+namespace BugPorter.Client.Features;
 
 public partial class SignUpFormView : ContentPage
 {

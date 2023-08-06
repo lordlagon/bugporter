@@ -1,4 +1,4 @@
-namespace BugPorter.Client.Pages.SignIn;
+namespace BugPorter.Client.Pages;
 
 public partial class SignInView : ContentPage
 {

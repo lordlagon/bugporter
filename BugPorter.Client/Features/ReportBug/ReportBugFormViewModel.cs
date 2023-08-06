@@ -1,4 +1,6 @@
-﻿namespace BugPorter.Client.Features.ReportBug;
+﻿using System.Windows.Input;
+
+namespace BugPorter.Client.Features;
 
 public partial class ReportBugFormViewModel : ViewModelBase
 {
@@ -9,8 +11,5 @@ public partial class ReportBugFormViewModel : ViewModelBase
     string description;
 
     [RelayCommand]
-    public void ReportBug()
-    {
-
-    }
+    void ReportBug() => new ReportBugCommand(this).Execute(null);
 }

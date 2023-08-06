@@ -1,4 +1,4 @@
-namespace BugPorter.Client.Features.ReportBug;
+namespace BugPorter.Client.Features;
 
 public partial class ReportBugFormView : ContentView
 {
