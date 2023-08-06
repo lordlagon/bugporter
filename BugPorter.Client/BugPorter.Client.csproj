@@ -51,6 +51,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Features\SignIn\SignInFormView.xaml.cs">
+	    <DependentUpon>SignInFormView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Features\SignUp\SignUpFormView.xaml.cs">
+	    <DependentUpon>SignUpFormView.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\ReportBug\ReportBugView.xaml.cs">
 	    <DependentUpon>ReportBugView.xaml</DependentUpon>
 	  </Compile>
@@ -61,6 +67,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Features\ReportBug\ReportBugFormView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\SignIn\SignInFormView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Features\SignUp\SignUpFormView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\SignIn\SignInView.xaml">

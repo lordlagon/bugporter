@@ -26,10 +26,22 @@ public static class MauiProgram
     {
         builder.Services.AddTransient<ReportBugViewModel>();
         builder.Services.AddTransient(s => new ReportBugView(s.GetRequiredService<ReportBugViewModel>()));
+        
+        builder.Services.AddTransient<ReportBugFormViewModel>();
+        builder.Services.AddTransient(s => new ReportBugFormView(s.GetRequiredService<ReportBugFormViewModel>()));
+
         builder.Services.AddTransient<SignInViewModel>();
         builder.Services.AddTransient(s => new SignInView(s.GetRequiredService<SignInViewModel>()));
+
+        builder.Services.AddTransient<SignInFormViewModel>();
+        builder.Services.AddTransient(s => new SignInFormView(s.GetRequiredService<SignInFormViewModel>()));
+
         builder.Services.AddTransient<SignUpViewModel>();
         builder.Services.AddTransient(s => new SignUpView(s.GetRequiredService<SignUpViewModel>()));
+
+        builder.Services.AddTransient<SignUpFormViewModel>();
+        builder.Services.AddTransient(s => new SignUpFormView(s.GetRequiredService<SignUpFormViewModel>()));
+
         return builder;
     }
 }
