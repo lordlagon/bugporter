@@ -1,4 +1,4 @@
-﻿namespace BugPorter.API
+﻿namespace BugPorter.Core.Features
 {
     public class ReportedBugRequest
     {

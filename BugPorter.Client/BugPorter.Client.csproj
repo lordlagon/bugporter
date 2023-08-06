@@ -48,6 +48,12 @@
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
+	  <PackageReference Include="Refit" Version="7.0.0" />
+	  <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BugPorter.Core\BugPorter.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

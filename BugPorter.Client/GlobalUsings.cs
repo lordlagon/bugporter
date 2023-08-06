@@ -5,6 +5,8 @@ global using BugPorter.Client.Shared.ViewModel;
 global using BugPorter.Client.Shared.Commands;
 global using BugPorter.Client.Features;
 global using BugPorter.Client.Pages;
+global using BugPorter.Core.Features;
+global using Refit;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;

@@ -1,5 +1,4 @@
 ﻿namespace BugPorter.Client;
-
 public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
@@ -19,7 +18,9 @@ public static class MauiProgram
     }
     public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
     {
-        // builder.Services.AddScoped<TransacaoService>();
+        builder.Services
+            .AddRefitClient<IReportBugApiCommand>()
+            .ConfigureHttpClient(c=> c.BaseAddress = new Uri("http://localhost:7210/api"));
         return builder;
     }
     public static MauiAppBuilder RegisterViewModelsViews(this MauiAppBuilder builder)

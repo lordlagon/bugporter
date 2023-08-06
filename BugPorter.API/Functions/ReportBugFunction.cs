@@ -6,9 +6,8 @@ using Microsoft.Extensions.Logging;
 using BugPorter.API.Features.ReportBug.GitHub;
 using BugPorter.API.Features.ReportBug;
 using FirebaseAdminAuthentication.DependencyInjection.Services;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
-using FirebaseAdminAuthentication.DependencyInjection.Models;
+using BugPorter.Core.Features;
 
 namespace BugPorter.API
 {
@@ -33,15 +32,15 @@ namespace BugPorter.API
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "bugs")] ReportedBugRequest request, 
             HttpRequest httpRequest)
         {
-            AuthenticateResult authenticateResult = await _authenticationHandler.HandleAuthenticateAsync(httpRequest);
+            //AuthenticateResult authenticateResult = await _authenticationHandler.HandleAuthenticateAsync(httpRequest);
 
-            if (!authenticateResult.Succeeded)
-            {
-                return new UnauthorizedResult();
-            }
+            //if (!authenticateResult.Succeeded)
+            //{
+            //    return new UnauthorizedResult();
+            //}
 
-            string userId = authenticateResult.Principal.FindFirst(FirebaseUserClaimType.ID).Value;
-            _logger.LogInformation("Authenticated user {UserId}", userId);
+            //string userId = authenticateResult.Principal.FindFirst(FirebaseUserClaimType.ID).Value;
+            //_logger.LogInformation("Authenticated user {UserId}", userId);
 
             NewBug newBug = new NewBug(request.Summary, request.Description);
 

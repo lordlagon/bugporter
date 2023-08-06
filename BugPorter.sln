@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugPorter.API", "BugPorter.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugPorter.Client", "BugPorter.Client\BugPorter.Client.csproj", "{2881A0AB-698D-49FE-88C7-11FA8AD57156}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugPorter.Core", "BugPorter.Core\BugPorter.Core.csproj", "{64E142BD-7C1A-4C7F-AFA7-A4CF91D3B83B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2881A0AB-698D-49FE-88C7-11FA8AD57156}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2881A0AB-698D-49FE-88C7-11FA8AD57156}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2881A0AB-698D-49FE-88C7-11FA8AD57156}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{64E142BD-7C1A-4C7F-AFA7-A4CF91D3B83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E142BD-7C1A-4C7F-AFA7-A4CF91D3B83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E142BD-7C1A-4C7F-AFA7-A4CF91D3B83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E142BD-7C1A-4C7F-AFA7-A4CF91D3B83B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
