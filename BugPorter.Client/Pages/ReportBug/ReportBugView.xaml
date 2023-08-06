@@ -5,11 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BugPorter.Client"
     x:DataType="local:ReportBugViewModel">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="{Binding Value}"
-            VerticalOptions="Center" />
-        <Entry Text="{Binding Value}" Placeholder="Enter a value" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout Padding="25" MaximumWidthRequest="1000">
+            <Label FontSize="Large" Text="Report a Bug" />
+            <local:ReportBugFormView />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

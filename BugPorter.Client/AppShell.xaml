@@ -4,20 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BugPorter.Client"
+    Shell.NavBarIsVisible="False"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
-        Title="Sign In"
-        ContentTemplate="{DataTemplate local:SignInView}"
-        Route="SignIn" />
-    
+        Title="Report Bug"
+        ContentTemplate="{DataTemplate local:ReportBugView}"
+        Route="ReportBug" />
+
     <ShellContent
         Title="Sign Up"
         ContentTemplate="{DataTemplate local:SignUpView}"
         Route="SignUp" />
 
     <ShellContent
-        Title="Report Bug"
-        ContentTemplate="{DataTemplate local:ReportBugView}"
-        Route="ReportBug" />
+        Title="Sign In"
+        ContentTemplate="{DataTemplate local:SignInView}"
+        Route="SignIn" />
+
 </Shell>
