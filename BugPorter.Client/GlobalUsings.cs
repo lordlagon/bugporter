@@ -1,6 +1,14 @@
 ﻿global using CommunityToolkit.Maui;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
+global using BugPorter.Client.Shared.ViewModel;
+global using BugPorter.Client.Shared.Commands;
+global using BugPorter.Client.Features.ReportBug;
+global using BugPorter.Client.Features.SignIn;
+global using BugPorter.Client.Features.SignUp;
+global using BugPorter.Client.Pages.ReportBug;
+global using BugPorter.Client.Pages.SignIn;
+global using BugPorter.Client.Pages.SignUp;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;

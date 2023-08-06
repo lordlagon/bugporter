@@ -1,3 +1,3 @@
-﻿namespace BugPorter.Client;
+﻿namespace BugPorter.Client.Features.SignUp;
 
 public partial class SignUpFormViewModel : ViewModelBase { }

@@ -1,10 +1,9 @@
-namespace BugPorter.Client;
+namespace BugPorter.Client.Features.ReportBug;
 
 public partial class ReportBugFormView : ContentView
 {
-	public ReportBugFormView(object bindingContext)
+	public ReportBugFormView()
 	{
 		InitializeComponent();
-		BindingContext = bindingContext;
 	}
 }

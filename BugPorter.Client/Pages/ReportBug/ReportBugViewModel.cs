@@ -2,6 +2,10 @@
 
 public partial class ReportBugViewModel : ViewModelBase
 {
-    [ObservableProperty]
-    string value;
+    public ReportBugFormViewModel ReportBugFormViewModel { get; }
+
+    public ReportBugViewModel(ReportBugFormViewModel reportBugFormViewModel)
+    {
+        ReportBugFormViewModel = reportBugFormViewModel;
+    }
 }

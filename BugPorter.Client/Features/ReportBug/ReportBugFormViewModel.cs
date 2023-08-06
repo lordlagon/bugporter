@@ -1,4 +1,4 @@
-﻿namespace BugPorter.Client;
+﻿namespace BugPorter.Client.Features.ReportBug;
 
 public partial class ReportBugFormViewModel : ViewModelBase
 {
