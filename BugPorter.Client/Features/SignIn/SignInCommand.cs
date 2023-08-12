@@ -19,6 +19,7 @@ namespace BugPorter.Client.Features
             {
                 var user = await _authClient.SignInWithEmailAndPasswordAsync(_viewModel.Email, _viewModel.Password);
                 await Application.Current.MainPage.DisplayAlert("Success", $"Successfully signed in!", "Ok");
+                await Shell.Current.GoToAsync("//ReportBug");
             }
             catch (Exception ex)
             {
