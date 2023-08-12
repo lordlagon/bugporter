@@ -26,7 +26,7 @@ namespace BugPorter.Client.Features
                 var user = await _authClient.CreateUserWithEmailAndPasswordAsync(_viewModel.Email, _viewModel.Password, _viewModel.Name);
                 await Application.Current.MainPage.DisplayAlert("Success", $"Successfully signed up!", "Ok");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Failed to sign up, Please try again later.", "Ok");
             }

@@ -1,7 +1,6 @@
 ﻿using Firebase.Auth;
 
 namespace BugPorter.Client.Features;
-
 public partial class SignUpFormViewModel : ViewModelBase
 {
     readonly FirebaseAuthClient _authClient;
@@ -19,6 +18,5 @@ public partial class SignUpFormViewModel : ViewModelBase
     }
 
     [RelayCommand]
-    void SignUpForm() => new SignUpCommand(this, _authClient).Execute(null);
-    
+    void SignUp() => new SignUpCommand(this, _authClient).Execute(null);
 }

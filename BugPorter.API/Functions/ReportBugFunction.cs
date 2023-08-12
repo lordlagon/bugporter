@@ -1,13 +1,15 @@
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+using BugPorter.Core.Features;
+using BugPorter.API.Features.ReportBug;
+using BugPorter.API.Features.ReportBug.GitHub;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
-using BugPorter.API.Features.ReportBug.GitHub;
-using BugPorter.API.Features.ReportBug;
-using FirebaseAdminAuthentication.DependencyInjection.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using BugPorter.Core.Features;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Extensions.Logging;
+using FirebaseAdminAuthentication.DependencyInjection.Services;
+using FirebaseAdminAuthentication.DependencyInjection.Models;
 
 namespace BugPorter.API
 {
@@ -32,15 +34,15 @@ namespace BugPorter.API
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "bugs")] ReportedBugRequest request, 
             HttpRequest httpRequest)
         {
-            //AuthenticateResult authenticateResult = await _authenticationHandler.HandleAuthenticateAsync(httpRequest);
+            AuthenticateResult authenticateResult = await _authenticationHandler.HandleAuthenticateAsync(httpRequest);
 
-            //if (!authenticateResult.Succeeded)
-            //{
-            //    return new UnauthorizedResult();
-            //}
+            if (!authenticateResult.Succeeded)
+            {
+                return new UnauthorizedResult();
+            }
 
-            //string userId = authenticateResult.Principal.FindFirst(FirebaseUserClaimType.ID).Value;
-            //_logger.LogInformation("Authenticated user {UserId}", userId);
+            string userId = authenticateResult.Principal.FindFirst(FirebaseUserClaimType.ID).Value;
+            _logger.LogInformation("Authenticated user {UserId}", userId);
 
             NewBug newBug = new NewBug(request.Summary, request.Description);
 

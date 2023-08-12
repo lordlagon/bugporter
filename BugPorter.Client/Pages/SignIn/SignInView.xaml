@@ -10,7 +10,8 @@
     <ScrollView>
         <VerticalStackLayout Padding="25" MaximumWidthRequest="1000">
             <Label FontSize="Large" Text="Sign In" />
-            <!--<features:SignInFormView Margin="0,25,0,0" BindingContext="{Binding SignInFormViewModel}" />-->
+            <features:SignInFormView Margin="0,25,0,0" BindingContext="{Binding SignInFormViewModel}" />
+            <Button Text="Sign Up" Command="{Binding SignUpCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
