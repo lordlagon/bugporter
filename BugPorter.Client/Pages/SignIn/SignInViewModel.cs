@@ -9,8 +9,5 @@ public partial class SignInViewModel : ViewModelBase
         SignInFormViewModel = signInFormViewModel;
     }
 
-    [RelayCommand]
-    void SignUp() {
-        Shell.Current.GoToAsync($"./{nameof(SignUpView)}");
-    }
+    
 }

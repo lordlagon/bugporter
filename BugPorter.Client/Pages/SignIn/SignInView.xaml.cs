@@ -7,4 +7,9 @@ public partial class SignInView : ContentPage
 		InitializeComponent();
 		BindingContext = bindingContext;
 	}
+
+    private async void Button_Pressed(object sender, EventArgs e)
+    {        
+        await Shell.Current.GoToAsync($"//SignUp");        
+    }
 }

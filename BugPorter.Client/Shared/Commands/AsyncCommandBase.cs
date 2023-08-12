@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace BugPorter.Client.Shared.Commands
-{    
+﻿namespace BugPorter.Client.Shared
+{
     public abstract class AsyncCommandBase : IRelayCommand, ICommand
     {
         readonly Action<Exception> _onException;

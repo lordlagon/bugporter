@@ -1,4 +1,4 @@
-﻿namespace BugPorter.Client.Shared.ViewModel;
+﻿namespace BugPorter.Client.Shared;
 
 public partial class ViewModelBase : ObservableObject
 {
