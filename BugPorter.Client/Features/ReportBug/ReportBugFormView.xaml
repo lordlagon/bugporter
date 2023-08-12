@@ -21,7 +21,6 @@
             <Label Text="Description" />
             <Editor
                 Margin="0,2,0,0"
-                
                 HeightRequest="100"
                 Text="{Binding Description}" />
         </VerticalStackLayout>

@@ -3,8 +3,8 @@
     x:Class="BugPorter.Client.Pages.ReportBugView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BugPorter.Client.Pages"
     xmlns:features="clr-namespace:BugPorter.Client.Features"
+    xmlns:local="clr-namespace:BugPorter.Client.Pages"
     x:DataType="local:ReportBugViewModel">
     <ScrollView>
         <VerticalStackLayout Padding="25" MaximumWidthRequest="1000">
