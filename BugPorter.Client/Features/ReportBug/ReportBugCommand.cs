@@ -29,7 +29,7 @@ namespace BugPorter.Client.Features
                 ReportedBugResponse response = await _reportBugApiCommand.Execute(request);
                 await Application.Current.MainPage.DisplayAlert("Success", $"Successfully reported bug #{response.Id}!", "Ok");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Failed to report bug.","Ok");                
             }

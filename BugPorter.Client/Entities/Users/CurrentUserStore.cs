@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using System.Net.Http.Headers;
 
 namespace BugPorter.Client.Entities
 {

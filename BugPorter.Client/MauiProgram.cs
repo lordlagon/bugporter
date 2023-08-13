@@ -22,10 +22,14 @@ public static class MauiProgram
     }
     public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
     {
-        builder.Services
-            .AddRefitClient<IReportBugApiCommand>()
-            .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://localhost:7210/api"));
         builder.Services.AddSingleton<CurrentUserStore>();
+        builder.Services.AddSingleton<CurrentUserAuthHttpMessageHandler>();
+        
+        builder.Services
+           .AddRefitClient<IReportBugApiCommand>()
+           .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://localhost:7210/api"))
+           .AddHttpMessageHandler<CurrentUserAuthHttpMessageHandler>();
+
         builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
         {
             ApiKey = "AIzaSyDG7Hd9QLi89HlhISWjTRxq7Cw1CZJNogo",
@@ -35,7 +39,6 @@ public static class MauiProgram
                 new EmailProvider()
             }
         }));
-
 
         return builder;
     }
