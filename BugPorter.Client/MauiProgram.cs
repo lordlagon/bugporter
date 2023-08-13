@@ -1,6 +1,8 @@
 ﻿using BugPorter.Client.Entities;
 using Firebase.Auth;
 using Firebase.Auth.Providers;
+using Microsoft.Extensions.Configuration;
+using System.Reflection;
 
 namespace BugPorter.Client;
 public static class MauiProgram
@@ -20,20 +22,39 @@ public static class MauiProgram
             });
         return builder.Build();
     }
+    public static void AddAppSettings(this MauiAppBuilder builder)
+    {
+        using Stream stream = Assembly
+            .GetExecutingAssembly()
+            .GetManifestResourceStream("BugPorter.Client.appsettings.json");
+        if(stream != null)
+        {
+            IConfigurationRoot config = new ConfigurationBuilder()
+                .AddJsonStream(stream)
+                .Build();
+            builder.Configuration.AddConfiguration(config);
+        }
+
+    }
     public static MauiAppBuilder RegisterAppServices(this MauiAppBuilder builder)
     {
         builder.Services.AddSingleton<CurrentUserStore>();
         builder.Services.AddSingleton<CurrentUserAuthHttpMessageHandler>();
-        
+
+        string bugporterApiBaseUrl = builder.Configuration.GetValue<string>("BUGPORTER_API_BASE_URL");
+
         builder.Services
            .AddRefitClient<IReportBugApiCommand>()
-           .ConfigureHttpClient(c => c.BaseAddress = new Uri("http://localhost:7210/api"))
+           .ConfigureHttpClient(c => c.BaseAddress = new Uri(bugporterApiBaseUrl))
            .AddHttpMessageHandler<CurrentUserAuthHttpMessageHandler>();
+        
+        string firebaseApiKey = builder.Configuration.GetValue<string>("FIREBASE_API_KEY");
+        string firebaseAuthDomain = builder.Configuration.GetValue<string>("FIREBASE_AUTH_DOMAIN");
 
         builder.Services.AddSingleton(new FirebaseAuthClient(new FirebaseAuthConfig()
         {
-            ApiKey = "AIzaSyDG7Hd9QLi89HlhISWjTRxq7Cw1CZJNogo",
-            AuthDomain = "bugporter-1f17e.firebaseapp.com",
+            ApiKey = firebaseApiKey,
+            AuthDomain = firebaseAuthDomain,
             Providers = new FirebaseAuthProvider[]
             {
                 new EmailProvider()
