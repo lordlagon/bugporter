@@ -64,6 +64,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="BugPorter.Core" Version="1.0.0" />
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
 	  <PackageReference Include="CommunityToolkit.MVVM" Version="8.2.0" />
 	  <PackageReference Include="FirebaseAuthentication.net" Version="4.0.2" />
@@ -72,11 +73,9 @@
 	  <PackageReference Include="Refit" Version="7.0.0" />
 	  <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <ProjectReference Include="..\BugPorter.Core\BugPorter.Core.csproj" />
+		<MauiSplashScreen Include="Resources\Splash\splashscreen.svg" />
 	</ItemGroup>
-
 	<ItemGroup>
 	  <Compile Update="Features\SignIn\SignInFormView.xaml.cs">
 	    <DependentUpon>SignInFormView.xaml</DependentUpon>
@@ -116,7 +115,15 @@
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.3.1</wizardVersion>
 		<projectType>MVVMToolkit</projectType>
-		<DefaultLanguage>en</DefaultLanguage>		
+		<DefaultLanguage>en</DefaultLanguage>
+		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+		<PackageCertificateThumbprint>FE98DA9B14BCCE35BEE92B0466CDA86788370A37</PackageCertificateThumbprint>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>		
 	</PropertyGroup>
 
 </Project>
