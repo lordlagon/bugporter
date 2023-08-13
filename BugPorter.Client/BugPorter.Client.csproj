@@ -115,7 +115,8 @@
 
 	<PropertyGroup Label="MauiAppAccelerator">
 		<wizardVersion>v1.3.1</wizardVersion>
-		<projectType>MVVMToolkit</projectType>		
+		<projectType>MVVMToolkit</projectType>
+		<DefaultLanguage>en</DefaultLanguage>		
 	</PropertyGroup>
 
 </Project>
